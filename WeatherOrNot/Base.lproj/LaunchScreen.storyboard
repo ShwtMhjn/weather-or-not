@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,9 +25,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="W" translatesAutoresizingMaskIntoConstraints="NO" id="XPC-LP-nTZ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weather or Not" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-L8-Cio">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather or Not" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-L8-Cio">
                                 <rect key="frame" x="16" y="525" width="343" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="106" id="0M7-YI-BW4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,10 +37,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="MCo-L8-Cio" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="A2E-Dg-1df"/>
                             <constraint firstAttribute="trailing" secondItem="XPC-LP-nTZ" secondAttribute="trailing" id="AnO-l3-fSF"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="MCo-L8-Cio" secondAttribute="bottom" constant="36" id="E9y-Ad-HZr"/>
                             <constraint firstItem="XPC-LP-nTZ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Met-pz-5cz"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="XPC-LP-nTZ" secondAttribute="bottom" id="RKQ-Od-oho"/>
                             <constraint firstItem="XPC-LP-nTZ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="aJV-bX-kfy"/>
+                            <constraint firstItem="MCo-L8-Cio" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="drf-AU-NCf"/>
                         </constraints>
                     </view>
                 </viewController>
