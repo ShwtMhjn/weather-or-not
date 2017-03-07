@@ -5,7 +5,7 @@
 //  Created by Sasha on 07/03/17.
 //  Copyright © 2017 ShwtMhjn. All rights reserved.
 //
-
+//Objective C based store to fetch and hold weather 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "WeatherBusiness.h"

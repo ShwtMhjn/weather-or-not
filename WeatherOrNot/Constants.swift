@@ -8,6 +8,7 @@
 
 import Foundation
 
+//This is a struct and will not be available in Objective C. For use only for Swift entities
 struct Constants {
     
     //MARK: -- Parsing Keys
@@ -38,4 +39,6 @@ struct Constants {
     //MARK: -- Errors --
     static let kErrorDomainJSONSerializationFailure  : String = "JSONSerializationFailure"
     static let kErrorDescriptionJSONSerializationFailure : String = "Please use a valid file for JSON input"
+    
+     //MARK: -- To be extended if any constants are required within the Swift module --
 }

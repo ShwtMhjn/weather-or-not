@@ -94,8 +94,8 @@
 		D95DA76D1E6DDB1E00A43FB1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Classes/Connection/Reachability.m; sourceTree = "<group>"; };
 		D95DA7751E6DED5100A43FB1 /* WeatherStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherStore.h; path = Classes/Store/WeatherStore.h; sourceTree = "<group>"; };
 		D95DA7761E6DED5100A43FB1 /* WeatherStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherStore.m; path = Classes/Store/WeatherStore.m; sourceTree = "<group>"; };
-		D95DA77A1E6DEFEC00A43FB1 /* WeatherOrNot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherOrNot-Bridging-Header.h"; sourceTree = "<group>"; };
-		D95DA77B1E6DEFEC00A43FB1 /* WeatherOrNotTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherOrNotTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D95DA77A1E6DEFEC00A43FB1 /* WeatherOrNot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WeatherOrNot-Bridging-Header.h"; path = "WeatherOrNot/WeatherOrNot-Bridging-Header.h"; sourceTree = "<group>"; };
+		D95DA77B1E6DEFEC00A43FB1 /* WeatherOrNotTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WeatherOrNotTests-Bridging-Header.h"; path = "WeatherOrNot/WeatherOrNotTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D95DA77C1E6DEFEC00A43FB1 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = Classes/Entities/Weather.swift; sourceTree = "<group>"; };
 		D95DA77F1E6DF2B100A43FB1 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Classes/Entities/City.swift; sourceTree = "<group>"; };
 		D95DA7821E6DF37B00A43FB1 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Forecast.swift; path = Classes/Entities/Forecast.swift; sourceTree = "<group>"; };
@@ -140,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				D95DA71C1E6DC5F400A43FB1 /* WeatherOrNot */,
+				D95DA77A1E6DEFEC00A43FB1 /* WeatherOrNot-Bridging-Header.h */,
+				D95DA77B1E6DEFEC00A43FB1 /* WeatherOrNotTests-Bridging-Header.h */,
 				D95DA7361E6DC5F400A43FB1 /* WeatherOrNotTests */,
 				D95DA7411E6DC5F500A43FB1 /* WeatherOrNotUITests */,
 				D95DA71B1E6DC5F400A43FB1 /* Products */,
@@ -160,24 +162,12 @@
 		D95DA71C1E6DC5F400A43FB1 /* WeatherOrNot */ = {
 			isa = PBXGroup;
 			children = (
+				D95DA7B51E6ECB3B00A43FB1 /* AppDelegate */,
+				D95DA7B71E6ECB7000A43FB1 /* View */,
+				D95DA7B61E6ECB5C00A43FB1 /* Interactor */,
 				D95DA7AC1E6E959C00A43FB1 /* Presenter */,
 				D95DA7791E6DEFB000A43FB1 /* Entities */,
-				D95DA7741E6DED2D00A43FB1 /* Store */,
-				D95DA7681E6DDA9F00A43FB1 /* Utilitites */,
-				D95DA7651E6DCCCD00A43FB1 /* Views */,
-				D95DA75C1E6DC7C200A43FB1 /* Business */,
-				D95DA7581E6DC64300A43FB1 /* Connection */,
-				D95DA7731E6DEC8000A43FB1 /* Marshal */,
-				D95DA77A1E6DEFEC00A43FB1 /* WeatherOrNot-Bridging-Header.h */,
-				D95DA77B1E6DEFEC00A43FB1 /* WeatherOrNotTests-Bridging-Header.h */,
-				D95DA7201E6DC5F400A43FB1 /* AppDelegate.h */,
-				D95DA7211E6DC5F400A43FB1 /* AppDelegate.m */,
-				D95DA7231E6DC5F400A43FB1 /* ViewController.h */,
-				D95DA7241E6DC5F400A43FB1 /* ViewController.m */,
-				D95DA7261E6DC5F400A43FB1 /* Main.storyboard */,
-				D95DA7291E6DC5F400A43FB1 /* Assets.xcassets */,
-				D95DA72B1E6DC5F400A43FB1 /* LaunchScreen.storyboard */,
-				D95DA72E1E6DC5F400A43FB1 /* Info.plist */,
+				D95DA7B41E6ECB3000A43FB1 /* Resources */,
 				D95DA71D1E6DC5F400A43FB1 /* Supporting Files */,
 			);
 			path = WeatherOrNot;
@@ -290,10 +280,76 @@
 		D95DA7AC1E6E959C00A43FB1 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				D95DA7681E6DDA9F00A43FB1 /* Utilitites */,
+				D95DA7B81E6ECB8500A43FB1 /* ViewModels */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		D95DA7B21E6ECB0700A43FB1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D95DA7231E6DC5F400A43FB1 /* ViewController.h */,
+				D95DA7241E6DC5F400A43FB1 /* ViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D95DA7B31E6ECB2100A43FB1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D95DA7261E6DC5F400A43FB1 /* Main.storyboard */,
+				D95DA72B1E6DC5F400A43FB1 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		D95DA7B41E6ECB3000A43FB1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D95DA7291E6DC5F400A43FB1 /* Assets.xcassets */,
+				D95DA72E1E6DC5F400A43FB1 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D95DA7B51E6ECB3B00A43FB1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D95DA7201E6DC5F400A43FB1 /* AppDelegate.h */,
+				D95DA7211E6DC5F400A43FB1 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D95DA7B61E6ECB5C00A43FB1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D95DA7741E6DED2D00A43FB1 /* Store */,
+				D95DA7731E6DEC8000A43FB1 /* Marshal */,
+				D95DA75C1E6DC7C200A43FB1 /* Business */,
+				D95DA7581E6DC64300A43FB1 /* Connection */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		D95DA7B71E6ECB7000A43FB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D95DA7651E6DCCCD00A43FB1 /* Views */,
+				D95DA7B21E6ECB0700A43FB1 /* ViewControllers */,
+				D95DA7B31E6ECB2100A43FB1 /* Storyboards */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D95DA7B81E6ECB8500A43FB1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
 				D95DA7AD1E6E95C800A43FB1 /* WeatherCellData.h */,
 				D95DA7AE1E6E95C800A43FB1 /* WeatherCellData.m */,
 			);
-			name = Presenter;
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

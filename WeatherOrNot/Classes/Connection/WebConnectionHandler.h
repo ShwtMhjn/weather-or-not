@@ -10,6 +10,7 @@
 
 @interface WebConnectionHandler : NSObject
 
+//Blocks for Success and Failure
 typedef void (^OnSuccess) (NSURLResponse *response, NSData *data);
 typedef void (^OnFailure) (NSURLResponse *response, NSData *data, NSError *error);
 

@@ -17,13 +17,16 @@
 #define KEY_CONTENT_TYPE  @"Content-Type"
 
 
-static NSString *const forecastApiUrl   = @"http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&APPID=3f0df6df7720bb69eacea6fc011d57a5";
+static NSString *const forecastApiUrl   = @"http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&APPID=3f0df6df7720bb69eacea6fc011d57a5"; //Full url appended with parameters and API key
 
-//static NSString *const forecastApiBody   = @"lat={lat}&lon={lon}&APPID=3f0df6df7720bb69eacea6fc011d57a5";
+//static NSString *const forecastApiBody   = @"lat={lat}&lon={lon}&APPID=3f0df6df7720bb69eacea6fc011d57a5"; //Not required in this case, but requests should be broke down to their body parameters
+
 static NSString *const kNetworkErrorDomain   = @"Network Unreachable";
 static int const kNetworkErrorCode = 999;
 
 @implementation WeatherBusiness
+
+#pragma mark -- Call Service --
 
 - (void) callWeatherApiForLocation:(CLLocation *)location onSuccess:(WeatherFetchSuccess)onSuccessBlock onFailure:(WeatherFetchFailure)onFailureBlock
 {
@@ -56,14 +59,7 @@ static int const kNetworkErrorCode = 999;
 }
 
 
-//-----------------------------------------------------------------------------------------------------------------------------
-/*!
- @method        createRequestWithURL: withBody: andHeader:
- @param         url body, header
- @return        NSMutableURLRequest
- @brief         To create a mutable request with the url, body, header and method
- */
-//-----------------------------------------------------------------------------------------------------------------------------
+#pragma mark -- Create Request --
 - (NSMutableURLRequest *) createRequestWithURL:(NSString *) url withBody:(NSString *) body andHeader:(NSDictionary *) header method:(NSString*)requestMethod {
     NSString *urlString = url; // there is no need to add the host domain because it already exists
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:CONNECTION_TIME_OUT];

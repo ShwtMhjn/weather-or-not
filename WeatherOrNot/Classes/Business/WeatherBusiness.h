@@ -17,6 +17,7 @@ typedef void (^WeatherFetchFailure) (NSError *error);
 
 @interface WeatherBusiness : NSObject
 
+//Use this to create the service request via the connection handler
 - (void) callWeatherApiForLocation:(CLLocation *)location onSuccess:(WeatherFetchSuccess)onSuccessBlock onFailure:(WeatherFetchFailure)onFailureBlock;
 
 @end

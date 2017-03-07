@@ -11,7 +11,6 @@ import Foundation
 extension Dictionary {
     
     //MARK: -- Function to return string Value --
-    
     func stringForKey (_ aKey : String) -> String {
         
         if let value = self[aKey as! Key] as? String {
@@ -26,7 +25,6 @@ extension Dictionary {
     }
     
     //MARK: -- Function to return double Value
-    
     func doubleForKey (_ aKey : String) -> Double {
         if(self[aKey as! Key] == nil) {
             
@@ -51,50 +49,8 @@ extension Dictionary {
         }
     }
     
-    subscript  (stringForKey aKey :String) -> String {
-        return self.stringForKey(aKey)
-    }
     
-    subscript  (doubleForKey aKey :String) -> Double {
-        if(self[aKey as! Key] == nil) {
-            
-            return Constants.kZeroDouble
-        }
-        
-        let value = Double(String(stringInterpolationSegment:(self[aKey as! Key])) )
-        if(value == nil) {
-            
-            return Constants.kZeroDouble
-        }
-        return value!
-        
-    }
-    subscript  (dictionaryForKey aKey :String) -> [String : AnyObject]? {
-        if(self[aKey as! Key] == nil) {
-            return nil
-        }
-        return self[aKey as! Key] as? [String:AnyObject]
-        
-    }
-    
-    subscript  (arrayForKey aKey :String) -> Array<AnyObject>? {
-        if(self[aKey as! Key] == nil) {
-            return nil
-        }
-        
-        var array = self[aKey as! Key] as? [AnyObject]
-        
-        if(self[aKey as! Key]  is [String:AnyObject]) {
-            array = [array! as AnyObject]
-        }
-        
-        return array
-    }
-    
-    
-    /**
-     Function to return Int Value
-     */
+    //MARK: -- Function to return Int Value --
     func integerForKey (_ aKey : String) -> Int {
         
         if(self[aKey as! Key] == nil) {
@@ -112,7 +68,7 @@ extension Dictionary {
         }
     }
     
-    //MARK: Function to return bool Value
+    //MARK: Function to return bool Value --
     func boolForKey (_ aKey : String) -> Bool {
         
         if(self[aKey as! Key] == nil) {
@@ -129,7 +85,7 @@ extension Dictionary {
         }
     }
     
-    //MARK: -- Function to return array Value
+    //MARK: -- Function to return array Value --
     func arrayForKey (_ aKey : String) -> Array<AnyObject>? {
         
         if(self[aKey as! Key] == nil) {
@@ -143,15 +99,24 @@ extension Dictionary {
         }
         
         return array
-    }    //
-    //MARK: -- Function to return dictionary Value
+    }
+        
     
+    //MARK: -- Function to return dictionary Value --
     func dictionaryForKey(_ aKey : String) -> [String : AnyObject]? {
         //MARK: --            return nil
         if(self[aKey as! Key] == nil) {
             return nil
         }
         return self[aKey as! Key] as? [String: AnyObject]
+    }
+    
+    subscript  (dictionaryForKey aKey :String) -> [String : AnyObject]? {
+        if(self[aKey as! Key] == nil) {
+            return nil
+        }
+        return self[aKey as! Key] as? [String:AnyObject]
+        
     }
 }
 

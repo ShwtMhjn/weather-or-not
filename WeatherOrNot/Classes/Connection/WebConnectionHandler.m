@@ -21,6 +21,8 @@
 
 @implementation WebConnectionHandler
 
+#pragma mark -- Execute Request --
+
 - (void)executeRequest:(NSURLRequest *)request onSuccess:(OnSuccess)onSuccessBlock
                failure:(OnFailure)onFailureBlock{
     
@@ -76,6 +78,8 @@
     
     [self.dataTask resume];
 }
+
+#pragma mark -- Cancel Service Request --
 
 -(void)cancelCurrentService
 {

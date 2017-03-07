@@ -5,13 +5,14 @@
 //  Created by Sasha on 06/03/17.
 //  Copyright © 2017 ShwtMhjn. All rights reserved.
 //
+//This class is meant to do small but useful tasks that can be outsourced to it from any other class
 
 #import "Utilities.h"
 #import "Reachability.h"
 
 @implementation Utilities
 
-#pragma mark - Reachablity
+#pragma mark -- Reachablity --
 + (BOOL) isNetworkReachable
 {
     Reachability *reachbility = [Reachability reachabilityForInternetConnection];
@@ -24,6 +25,7 @@
     return YES;
 }
 
+#pragma mark -- Temperature --
 + (NSNumber *)temperatureToCelcius:(double)fahrenheit
 {
     double temperature = fahrenheit;

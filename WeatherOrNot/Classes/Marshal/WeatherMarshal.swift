@@ -5,6 +5,7 @@
 //  Created by Sasha on 07/03/17.
 //  Copyright © 2017 ShwtMhjn. All rights reserved.
 //
+//Marshals the entire JSON. This can be broken into smaller marshals if the more keys need to be marshalled in a nested object.
 
 import Foundation
 
